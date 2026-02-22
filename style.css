@@ -1,0 +1,164 @@
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-image: url("https://img.freepik.com/premium-photo/white-elegant-desktop-from-business-tools-office-design-studio-shot-top-view_1257223-572.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    text-align: center;
+}
+
+h1 {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(30px, 5vw, 50px);
+    margin-bottom: 40px;
+    color: #222;
+    text-shadow: 0 4px 10px rgba(255,255,255,0.8);
+}
+
+.board {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: stretch;
+    flex-wrap: wrap;
+}
+
+/* List Styling */
+.list {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 20px;
+    width: 350px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+#list1 { border-top: 5px solid #ff4d6d; }
+#list2 { border-top: 5px solid #56568f; }
+#list3 { border-top: 5px solid #96e6a1; }
+
+.list h2 {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    color: #333;
+    text-align: left;
+}
+
+/* Scrollable area for cards */
+.cards-container {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding-right: 5px;
+    margin-bottom: 10px;
+}
+
+.cards-container::-webkit-scrollbar {
+    width: 5px;
+}
+
+.cards-container::-webkit-scrollbar-thumb {
+    background: rgba(0,0,0,0.1);
+    border-radius: 10px;
+}
+
+/* Card Styling */
+.card {
+    background: rgba(255, 255, 255, 0.7);
+    padding: 15px;
+    margin-bottom: 12px;
+    border-radius: 12px;
+    cursor: grab;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    transition: all 0.2s ease;
+    position: relative;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    background: white;
+}
+
+.card.dragging {
+    opacity: 0.5;
+    cursor: grabbing;
+}
+
+.delete-btn {
+    cursor: pointer;
+    font-size: 14px;
+    opacity: 0.3;
+    transition: opacity 0.2s;
+}
+
+.card:hover .delete-btn {
+    opacity: 1;
+}
+
+/* Input when creating task */
+.temp-input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    border: 2px dashed #ff4d6d;
+    background: rgba(255,255,255,0.8);
+    outline: none;
+    margin-bottom: 10px;
+    font-family: inherit;
+}
+
+/* Add Button anchored to bottom */
+.add-wrapper {
+    margin-top: auto;
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+}
+
+.add-btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #ff4d6d, #ff758f);
+    color: white;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(255, 77, 109, 0.4);
+    transition: transform 0.3s ease;
+}
+
+.add-btn:hover {
+    transform: scale(1.1) rotate(90deg);
+}
+
+@media (max-width: 768px) {
+    .list { width: 100%; height: 400px; }
+}
+
